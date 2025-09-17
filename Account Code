@@ -1,0 +1,25 @@
+class Account {
+    double balance;
+    Account(double b){ balance=b; }
+
+    void deposit(double amt){
+        balance+=amt;
+        System.out.println("Deposited: "+amt+" Balance: "+balance);
+    }
+
+    void withdraw(double amt){
+        if(amt<=balance){
+            balance-=amt;
+            System.out.println("Withdrawn: "+amt+" Balance: "+balance);
+        }else
+            System.out.println("Insufficient balance!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args){
+        Account a=new Account(5000);
+        a.deposit(5500);
+        a.withdraw(6000);
+    }
+}
